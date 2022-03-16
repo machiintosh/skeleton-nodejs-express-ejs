@@ -9,7 +9,7 @@ router.get('/', async function(req, res, next) {
 
 module.exports = router;
 
-router.get('/inserir', async function(req, res, next) {
+router.get('/insert', async function(req, res, next) {
 
   const autor = {
     nome: "luiz",
@@ -18,6 +18,20 @@ router.get('/inserir', async function(req, res, next) {
   }
 
   const autores = await Autor.insert(autor);
+  res.json(autores);
+  
+});
+
+router.get('/update', async function(req, res, next) {
+
+  const autor = {
+    nome: "luizinho",
+    sobrenome: "picolo",
+    data_nascimento: "2005/10/09",
+    id: "7"
+  }
+
+  const autores = await Autor.update(autor);
   res.json(autores);
   
 });
