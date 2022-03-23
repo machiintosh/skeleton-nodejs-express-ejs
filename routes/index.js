@@ -9,15 +9,9 @@ router.get('/', async function(req, res, next) {
 
 module.exports = router;
 
-router.get('/insert', async function(req, res, next) {
-
-  const autor = {
-    nome: "luiz",
-    sobrenome: "picolo",
-    data_nascimento: "2005/10/08"
-  }
-
-  const autores = await Autor.insert(autor);
+router.post('/insert', async function(req, res, next) {
+  
+  const autores = await Autor.insert(req.body); 
   res.json(autores);
   
 });
@@ -25,10 +19,10 @@ router.get('/insert', async function(req, res, next) {
 router.get('/update', async function(req, res, next) {
 
   const autor = {
-    nome: "luizinho",
-    sobrenome: "picolo",
+    nome: "Luiz",
+    sobrenome: "Picolo",
     data_nascimento: "2005/10/09",
-    id: "7"
+    id: "3"
   }
 
   const autores = await Autor.update(autor);
@@ -39,7 +33,7 @@ router.get('/update', async function(req, res, next) {
 router.get('/delete', async function(req, res, next) {
 
   const autor = {
-    id: "8"
+    id: "12"
   }
   const autores = await Autor.delete(autor);
   res.json(autores);
