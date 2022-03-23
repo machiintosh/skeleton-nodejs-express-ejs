@@ -16,16 +16,9 @@ router.post('/insert', async function(req, res, next) {
   
 });
 
-router.get('/update', async function(req, res, next) {
+router.put('/update', async function(req, res, next) {
 
-  const autor = {
-    nome: "Luiz",
-    sobrenome: "Picolo",
-    data_nascimento: "2005/10/09",
-    id: "3"
-  }
-
-  const autores = await Autor.update(autor);
+  const autores = await Autor.update(req.body); 
   res.json(autores);
   
 });
