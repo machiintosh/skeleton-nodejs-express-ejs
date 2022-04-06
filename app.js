@@ -28,6 +28,7 @@ app.use('/selectlivro', indexRouter);
 app.use('/updatelivro', indexRouter);
 app.use('/deletelivro', indexRouter);
 app.use('/insertlivro', indexRouter);
+app.use('/selectlivroperid', indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

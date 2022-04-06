@@ -61,4 +61,11 @@ router.put('/updatelivro', async function(req, res, next) {
   res.json(livros);
   
 });
+
+router.get('/selectlivroperid', async function(req, res, next) {
+
+  const livros = await Livro.selectPerId();
+  res.json(livros);
+  
+});
 module.exports = router;

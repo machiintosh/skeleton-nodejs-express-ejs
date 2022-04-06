@@ -27,6 +27,14 @@ class Livro {
     const values=[data.autor, data.titulo, data.editora, data.data_publicacao, data.preco, data.id];
     return await connect.query(sql, values);
   }
-}
 
+
+  static async selectPerId(data){
+    const connect = await db.connect();
+    //const sql="SELECT * FROM livros where autor=1";
+    //const values=[data.autor];
+    return await connect.query("SELECT * FROM livros where autor=1");
+  }
+
+}
 module.exports = Livro;
