@@ -29,11 +29,9 @@ class Livro {
   }
 
 
-  static async selectPerId(data){
+  static async selectPerId(){
     const connect = await db.connect();
-    //const sql="SELECT * FROM livros where autor=1";
-    //const values=[data.autor];
-    return await connect.query("SELECT * FROM livros where autor=1");
+    return await connect.query("SELECT * FROM livros where autor=2");
   }
 
 }
